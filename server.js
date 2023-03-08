@@ -3,10 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended : true}));
 
+const MongoClient = require('mongodb').MongoClient;
+MongoClient.connect('mongodb+srv://admin:1234@cluster0.mhl7op5.mongodb.net/?retryWrites=true&w=majority', function(에러, client) {
 
 app.listen(8080, function(){
     console.log('listening on 8080');
 });
+
+})
+
+
+
 
 // 누군가가 /pet 으로 방문을 하면..
 
